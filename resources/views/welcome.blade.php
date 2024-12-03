@@ -64,6 +64,20 @@
                 </div>
             </section>
 
+            <div class="flex flex-col md:flex-row justify-center items-center mt-32 gap-6 text-center md:text-left">
+                <img
+                    src="{{ asset('home2.png') }}"
+                    alt="Gym equipment"
+                    class="w-1/2 h-auto inline-block"
+                />
+                <div class="flex flex-col items-center md:items-start">
+                    <h2 class="text-5xl font-bold">Membership starts from Rp 35.000/day</h2>
+                    <p class="mt-4">
+                        Enjoy unlimited workouts at all RamsFit clubs with premium facilities and access to exclusive fitness classes.
+                    </p>
+                </div>
+            </div>
+
             @endsection
         </main>
     </body>
