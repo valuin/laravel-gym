@@ -50,8 +50,8 @@
         <div class="flex flex-col text-white items-start justify-center w-full md:w-auto pr-4 md:pr-24">
             <p class="text-center font-semibold text-xl mb-3 md:text-start">About</p>
             <div class="space-y-2">
-                <p class="text-center md:text-start">Near You</p>
-                <p class="text-center md:text-start">Our Branches</p>
+                <p class="text-center md:text-start">Why Ramsfit</p>
+                <p class="text-center md:text-start">FAQ</p>
             </div>
         </div>
     </div>

@@ -29,7 +29,7 @@
 
             window.addEventListener("scroll", function () {
                 const scrollPosition = window.scrollY;
-                const maxScroll = 200; // Adjust this value as needed
+                const maxScroll = 200;
                 const progress = Math.min(scrollPosition / maxScroll, 1);
 
                 // Update Navbar Position
@@ -41,14 +41,12 @@
                     navbar.classList.remove("top-4");
                 }
 
-                // Update Navbar Content Classes
                 if (progress > 0) {
                     navbarContent.classList.add(
                         "bg-white/5",
                         "backdrop-blur-lg",
-                        "border-white/50", // Semi-transparent white border
-                        "shadow-lg",
-                        "shadow-white/10",
+                        "border-white/50",
+                        "shadow-glow",
                         "rounded-full",
                         "text-white",
                         "p-2",
@@ -70,8 +68,7 @@
                         "bg-white/5",
                         "backdrop-blur-lg",
                         "border-white/50",
-                        "shadow-lg",
-                        "shadow-white/10",
+                        "shadow-glow",
                         "rounded-full",
                         "text-white",
                         "p-2",
@@ -79,7 +76,6 @@
                     );
                 }
 
-                // Update Inline Styles
                 navbarContent.classList.add('border');
                 navbarContent.style.maxWidth = `${100 - progress * 20}%`;
                 navbarContent.style.borderRadius = `${progress * 9999}px`;
@@ -129,12 +125,12 @@
                                 >About</a
                             >
                             <a
-                                href="pricing.html"
+                                href="{{ route('pricing') }}"
                                 class="hover:text-green-400 transition"
                                 >Pricing</a
                             >
                             <a
-                                href="classes.html"
+                                href="{{ route('classes') }}"
                                 class="hover:text-green-400 transition"
                                 >Classes</a
                             >
