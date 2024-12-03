@@ -26,6 +26,8 @@
         document.addEventListener("DOMContentLoaded", function () {
             const navbar = document.getElementById("navbar");
             const navbarContent = document.getElementById("navbar-content");
+            const logoText = document.getElementById("logo-text");
+            const navbarFlex = document.getElementById("navbar-flex");
 
             window.addEventListener("scroll", function () {
                 const scrollPosition = window.scrollY;
@@ -37,8 +39,13 @@
                     navbar.classList.add("top-4");
                     navbar.classList.remove("top-0");
                 } else {
+                    logoText.style.display = "flex";
                     navbar.classList.add("top-0");
                     navbar.classList.remove("top-4");
+                }
+
+                if (scrollPosition > 100) {
+                    logoText.style.display = "none";
                 }
 
                 if (progress > 0) {
@@ -76,11 +83,11 @@
                     );
                 }
 
-                navbarContent.classList.add('border');
-                navbarContent.style.maxWidth = `${100 - progress * 20}%`;
+                navbarContent.classList.add("border");
+                navbarContent.style.maxWidth = `${100 - progress * 34}%`;
                 navbarContent.style.borderRadius = `${progress * 9999}px`;
                 const paddingY = 0.75 + progress * 0.25;
-                const paddingX = 1 + progress * 2;
+                const paddingX = 1 + progress * 15;
                 navbarContent.style.padding = `${paddingY}rem ${paddingX}rem`;
             });
         });
@@ -100,16 +107,26 @@
                     id="navbar-content"
                     class="mx-auto flex justify-between items-center text-sm p-2 py-5 mt-4 text-white transition-all duration-300 ease-in-out"
                 >
-                    <div class="flex items-center justify-between w-full">
+                    <div
+                        id="navbar-flex"
+                        class="flex items-center justify-between w-full"
+                    >
                         <!-- Brand Logo -->
-                        <div class="logo flex items-center">
-                            <img
-                                src="{{ asset('icon.png') }}"
-                                alt="Ramsfit logo"
-                                class="w-8 h-8"
-                            />
-                            <h2 class="text-xl font-semibold">Ramsfit</h2>
-                        </div>
+                        <a href="/" class="logo-link">
+                            <div class="logo flex items-center">
+                                <img
+                                    src="{{ asset('icon.png') }}"
+                                    alt="Ramsfit logo"
+                                    class="w-8 h-8"
+                                />
+                                <h2
+                                    id="logo-text"
+                                    class="text-xl font-semibold"
+                                >
+                                    Ramsfit
+                                </h2>
+                            </div>
+                        </a>
                         <!-- Navigation Links -->
                         <nav
                             class="hidden md:flex space-x-4 text-base font-semibold pr-20"
