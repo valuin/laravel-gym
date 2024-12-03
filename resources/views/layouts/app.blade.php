@@ -132,12 +132,12 @@
                             class="hidden md:flex space-x-4 text-base font-semibold pr-20"
                         >
                             <a
-                                href="homepage.html"
+                                href="{{ route('homepage') }}"
                                 class="hover:text-green-400 transition"
                                 >Home</a
                             >
                             <a
-                                href="aboutus.html"
+                                href="{{ route('aboutus') }}"
                                 class="hover:text-green-400 transition"
                                 >About</a
                             >
@@ -152,7 +152,7 @@
                                 >Classes</a
                             >
                             <a
-                                href="locations.html"
+                                href="{{ route('location') }}"
                                 class="hover:text-green-400 transition"
                                 >Location</a
                             >
