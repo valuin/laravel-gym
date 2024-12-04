@@ -64,17 +64,89 @@
                 </div>
             </section>
 
-            <div class="flex flex-col md:flex-row justify-center items-center mt-32 gap-6 text-center md:text-left">
+            <div
+                class="flex flex-col md:flex-row justify-center items-center mt-32 gap-6 text-center md:text-left"
+            >
                 <img
                     src="{{ asset('home2.png') }}"
                     alt="Gym equipment"
                     class="w-1/2 h-auto inline-block"
                 />
                 <div class="flex flex-col items-center md:items-start">
-                    <h2 class="text-5xl font-bold">Membership starts from Rp 35.000/day</h2>
+                    <h2 class="text-5xl font-bold">
+                        Membership starts from Rp 35.000/day
+                    </h2>
                     <p class="mt-4">
-                        Enjoy unlimited workouts at all RamsFit clubs with premium facilities and access to exclusive fitness classes.
+                        Enjoy unlimited workouts at all RamsFit clubs with
+                        premium facilities and access to exclusive fitness
+                        classes.
                     </p>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col justify-center items-center mt-32 gap-6 text-center md:text-left"
+            >
+                <!-- Section Title and Description -->
+                <div class="flex-col">
+                    <span class="font-semibold text-5xl">Featured Class</span>
+                    <p>
+                        Unleash your potential with RamsFit's signature
+                        workouts. Energizing, results-driven classes designed to
+                        help you train like a pro!
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-row gap-6 items-start mt-8 w-full justify-center flex-wrap"
+                >
+                    <!-- Card 1: Yoga -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all border border-white/20 w-full sm:w-1/2 md:w-1/3"
+                    >
+                        <h3 class="text-2xl font-semibold mb-4">Yoga</h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            Find your inner balance with our expert-led yoga
+                            sessions.
+                        </p>
+                        <div class="flex items-center mt-4">
+                            <span class="text-sm">60 mins</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-sm">All Levels</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Body Combat -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all border border-white/20 w-full sm:w-1/2 md:w-1/3"
+                    >
+                        <h3 class="text-2xl font-semibold mb-4">Body Combat</h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            High-energy martial arts-inspired workout that burns
+                            major calories.
+                        </p>
+                        <div class="flex items-center mt-4">
+                            <span class="text-sm">45 mins</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-sm">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Pilates -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all border border-white/20 w-full sm:w-1/2 md:w-1/3"
+                    >
+                        <h3 class="text-2xl font-semibold mb-4">Pilates</h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            Core-strengthening exercises for improved
+                            flexibility and posture.
+                        </p>
+                        <div class="flex items-center mt-4">
+                            <span class="text-sm">50 mins</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-sm">All Levels</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -29,6 +29,7 @@
             const logoImg = document.getElementById("logo-img");
             const navbarFlex = document.getElementById("navbar-flex");
             const authLinks = document.getElementById("auth-links");
+            const navLinks = document.getElementById("nav-links");
 
             window.addEventListener("scroll", function () {
                 const scrollPosition = window.scrollY;
@@ -46,14 +47,17 @@
                     navbar.classList.remove("top-4");
                 }
 
-                if (scrollPosition > 75) {
+                if (scrollPosition < 55) {
+                    authLinks.classList.remove("ml-16");
+                }
+                if (scrollPosition > 35) {
                     logoText.style.display = "none";
                     logoImg.style.display = "none"; 
-                    authLinks.classList.remove("mr-16");
-                } else {
+                    authLinks.classList.add("ml-16");
+                }
+                else {
                     logoText.style.display = "flex";
                     logoImg.style.display = "flex";
-                    authLinks.classList.add("mr-16");
                 }
 
                 if (progress > 0) {
@@ -67,9 +71,11 @@
                         "p-2",
                         "radial-gradient"
                     );
+                    navLinks.classList.add(
+                        "mr-36"
+                    )
                     navbarContent.classList.remove(
                         "mt-4",
-                        "pr-20",
                         "text-white",
                         "border-transparent"
                     );
@@ -109,7 +115,7 @@
             <!-- Header -->
             <nav
                 id="navbar"
-                class="w-full fixed z-50 transition-all duration-300 ease-in-out top-0"
+                class="w-11/12 fixed z-50 transition-all duration-300 ease-in-out top-0"
             >
                 <div
                     id="navbar-content"
@@ -137,7 +143,7 @@
                                 </h2>
                             </a>
                             <!-- Navigation Links -->
-                            <nav class="hidden md:flex space-x-4 text-base font-semibold">
+                            <nav class="hidden md:flex space-x-4 text-base font-semibold" id="nav-links">
                                 <a
                                     href="{{ route('homepage') }}"
                                     class="hover:text-green-400 transition"
@@ -167,7 +173,7 @@
                         </div>
 
                         <!-- Right Container: Authentication Links -->
-                        <div class="hidden md:flex space-x-4 text-base font-semibold ml-auto mr-16" id="auth-links">
+                        <div class="hidden md:flex space-x-4 text-base font-semibold ml-auto" id="auth-links">
                             @guest
                                 <a
                                     href="{{ route('login') }}"
