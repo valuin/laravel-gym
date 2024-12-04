@@ -24,36 +24,61 @@
         class="font-sans antialiased text-white min-h-screen w-full flex flex-col bg-cover bg-center"
         style="background-image: url('{{ asset('bg.png') }}')"
     >
-            <main class="text-start w-full">
-                @extends('layouts.app')
-
-                @section('title', 'Ramsfit - The Best Gym in Town')
-
-                @section('content')
-                    <h1 class="text-6xl font-bold mb-5">RamsFit</h1>
-                    <h2 class="text-2xl mb-10">THE BEST GYM IN TOWN</h2>
-                    <a href="classes.html" class="cta-button inline-block bg-white text-black font-bold py-2 px-4 rounded hover:bg-green-400 transition">
-                        Join Now
-                    </a>
-                    <!-- Stats Section -->
-                    <section class="stats-container relative mt-16 bg-white bg-opacity-5 rounded-2xl shadow-xl hover:shadow-2xl transition p-10">
-                        <img src="{{ asset('homepic.png') }}" alt="Gym equipment" class="stats-bg absolute inset-0 w-full h-full object-cover rounded-2xl opacity-20" />
-                        <div class="stats relative z-10 flex justify-between space-x-4">
-                            <div class="stat text-center">
-                                <div class="stat-number text-5xl font-bold">2</div>
-                                <div class="stat-label text-xl mt-2">Fitness Centers</div>
-                            </div>
-                            <div class="stat text-center">
-                                <div class="stat-number text-5xl font-bold">850</div>
-                                <div class="stat-label text-xl mt-2">Happy Clients</div>
-                            </div>
-                            <div class="stat text-center">
-                                <div class="stat-number text-5xl font-bold">24/7</div>
-                                <div class="stat-label text-xl mt-2">Operating Hours</div>
-                            </div>
+        <main class="text-start w-full">
+            @extends('layouts.app') @section('title', 'Ramsfit - The Best Gym in
+            Town') @section('content')
+            <h1 class="text-6xl font-bold mb-5">RamsFit</h1>
+            <h2 class="text-2xl mb-10">THE BEST GYM IN TOWN</h2>
+            <a
+                href="classes.html"
+                class="cta-button inline-block bg-white text-black font-bold py-2 px-4 rounded hover:bg-green-400 transition"
+            >
+                Join Now
+            </a>
+            <!-- Stats Section -->
+            <section
+                class="stats-container relative mt-16 bg-white bg-opacity-5 rounded-2xl shadow-xl hover:shadow-2xl transition p-10"
+            >
+                <img
+                    src="{{ asset('homepic.png') }}"
+                    alt="Gym equipment"
+                    class="stats-bg absolute inset-0 w-full h-full object-cover rounded-2xl opacity-20"
+                />
+                <div class="stats relative z-10 flex justify-between space-x-4">
+                    <div class="stat text-center">
+                        <div class="stat-number text-5xl font-bold">2</div>
+                        <div class="stat-label text-xl mt-2">
+                            Fitness Centers
                         </div>
-                    </section>
-                @endsection
-            </main>
+                    </div>
+                    <div class="stat text-center">
+                        <div class="stat-number text-5xl font-bold">850</div>
+                        <div class="stat-label text-xl mt-2">Happy Clients</div>
+                    </div>
+                    <div class="stat text-center">
+                        <div class="stat-number text-5xl font-bold">24/7</div>
+                        <div class="stat-label text-xl mt-2">
+                            Operating Hours
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="flex flex-col md:flex-row justify-center items-center mt-32 gap-6 text-center md:text-left">
+                <img
+                    src="{{ asset('home2.png') }}"
+                    alt="Gym equipment"
+                    class="w-1/2 h-auto inline-block"
+                />
+                <div class="flex flex-col items-center md:items-start">
+                    <h2 class="text-5xl font-bold">Membership starts from Rp 35.000/day</h2>
+                    <p class="mt-4">
+                        Enjoy unlimited workouts at all RamsFit clubs with premium facilities and access to exclusive fitness classes.
+                    </p>
+                </div>
+            </div>
+
+            @endsection
+        </main>
     </body>
 </html>

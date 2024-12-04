@@ -1,4 +1,3 @@
-<!-- resources/views/layouts/app.blade.php -->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -26,10 +25,14 @@
         document.addEventListener("DOMContentLoaded", function () {
             const navbar = document.getElementById("navbar");
             const navbarContent = document.getElementById("navbar-content");
+            const logoText = document.getElementById("logo-text");
+            const logoImg = document.getElementById("logo-img");
+            const navbarFlex = document.getElementById("navbar-flex");
+            const authLinks = document.getElementById("auth-links");
 
             window.addEventListener("scroll", function () {
                 const scrollPosition = window.scrollY;
-                const maxScroll = 200; // Adjust this value as needed
+                const maxScroll = 200;
                 const progress = Math.min(scrollPosition / maxScroll, 1);
 
                 // Update Navbar Position
@@ -37,18 +40,28 @@
                     navbar.classList.add("top-4");
                     navbar.classList.remove("top-0");
                 } else {
+                    logoImg.style.display = "flex";
+                    logoText.style.display = "flex";
                     navbar.classList.add("top-0");
                     navbar.classList.remove("top-4");
                 }
 
-                // Update Navbar Content Classes
+                if (scrollPosition > 75) {
+                    logoText.style.display = "none";
+                    logoImg.style.display = "none"; 
+                    authLinks.classList.remove("mr-16");
+                } else {
+                    logoText.style.display = "flex";
+                    logoImg.style.display = "flex";
+                    authLinks.classList.add("mr-16");
+                }
+
                 if (progress > 0) {
                     navbarContent.classList.add(
                         "bg-white/5",
                         "backdrop-blur-lg",
-                        "border-white/50", // Semi-transparent white border
-                        "shadow-lg",
-                        "shadow-white/10",
+                        "border-white/50",
+                        "shadow-glow",
                         "rounded-full",
                         "text-white",
                         "p-2",
@@ -70,8 +83,7 @@
                         "bg-white/5",
                         "backdrop-blur-lg",
                         "border-white/50",
-                        "shadow-lg",
-                        "shadow-white/10",
+                        "shadow-glow",
                         "rounded-full",
                         "text-white",
                         "p-2",
@@ -79,12 +91,11 @@
                     );
                 }
 
-                // Update Inline Styles
-                navbarContent.classList.add('border');
-                navbarContent.style.maxWidth = `${100 - progress * 20}%`;
+                navbarContent.classList.add("border");
+                navbarContent.style.maxWidth = `${100 - progress * 34}%`;
                 navbarContent.style.borderRadius = `${progress * 9999}px`;
                 const paddingY = 0.75 + progress * 0.25;
-                const paddingX = 1 + progress * 2;
+                const paddingX = 1 + progress * 15;
                 navbarContent.style.padding = `${paddingY}rem ${paddingX}rem`;
             });
         });
@@ -128,8 +139,8 @@
                                 class="hover:text-green-400 transition"
                                 >About</a
                             >
-                            <a 
-                                href="{{ route('pricing') }}"
+                            <a
+                                href="pricing.html"
                                 class="hover:text-green-400 transition"
                                 >Pricing</a
                             >
