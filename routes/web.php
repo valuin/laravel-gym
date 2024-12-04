@@ -13,6 +13,9 @@ Route::get('/dashboard', function () {
 
 Route::get('/pricing', function () { return view('pricing'); })->name('pricing');
 Route::get('/classes', function () { return view('classes'); })->name('classes');
+Route::get('/aboutus', function () { return view('aboutus'); })->name('aboutus');
+Route::get('/homepage', function () { return view('homepage'); })->name('homepage');
+Route::get('/location', function () { return view('location'); })->name('location');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
