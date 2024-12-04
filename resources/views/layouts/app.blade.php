@@ -27,6 +27,7 @@
             const navbar = document.getElementById("navbar");
             const navbarContent = document.getElementById("navbar-content");
             const logoText = document.getElementById("logo-text");
+            const logoImg = document.getElementById("logo-img");
             const navbarFlex = document.getElementById("navbar-flex");
 
             window.addEventListener("scroll", function () {
@@ -39,6 +40,7 @@
                     navbar.classList.add("top-4");
                     navbar.classList.remove("top-0");
                 } else {
+                    logoImg.style.display = "flex";
                     logoText.style.display = "flex";
                     navbar.classList.add("top-0");
                     navbar.classList.remove("top-4");
@@ -46,6 +48,7 @@
 
                 if (scrollPosition > 100) {
                     logoText.style.display = "none";
+                    logoImg.style.display = "none";
                 }
 
                 if (progress > 0) {
@@ -118,6 +121,7 @@
                                     src="{{ asset('icon.png') }}"
                                     alt="Ramsfit logo"
                                     class="w-8 h-8"
+                                    id="logo-img"
                                 />
                                 <h2
                                     id="logo-text"
@@ -156,6 +160,46 @@
                                 class="hover:text-green-400 transition"
                                 >Location</a
                             >
+
+                            @guest
+                            <a
+                                href="{{ route('login') }}"
+                                class="hover:text-green-400 transition"
+                                >Login</a
+                            >
+                            <a
+                                href="{{ route('register') }}"
+                                class="hover:text-green-400 transition"
+                                >Register</a
+                            >
+                            @else
+                            <div class="relative">
+                                <button class="hover:text-green-400 transition">
+                                    {{ Auth::user()->name }}
+                                </button>
+                                <div
+                                    class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg"
+                                >
+                                    <a
+                                        href="{{ route('dashboard') }}"
+                                        class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                                        >Dashboard</a
+                                    >
+                                    <form
+                                        method="POST"
+                                        action="{{ route('logout') }}"
+                                    >
+                                        @csrf
+                                        <button
+                                            type="submit"
+                                            class="w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
+                                        >
+                                            Logout
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            @endguest
                         </nav>
                     </div>
                 </div>
