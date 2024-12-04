@@ -128,8 +128,8 @@
                                 class="hover:text-green-400 transition"
                                 >About</a
                             >
-                            <a
-                                href="pricing.html"
+                            <a 
+                                href="{{ route('pricing') }}"
                                 class="hover:text-green-400 transition"
                                 >Pricing</a
                             >
