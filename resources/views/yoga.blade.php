@@ -15,8 +15,8 @@
             height: 100%;
             width: 100%;
             font-family: Arial, sans-serif;
-            background-color: #333; /* Warna background hitam */
-            color: white; /* Warna teks putih */
+            background-color: #333;
+            color: white; 
         }
 
         .container {
@@ -32,9 +32,9 @@
             justify-content: space-between;
             align-items: stretch;
             width: 100%;
-            max-width: 1600px; /* Maksimal lebar */
-            height: 100%; /* Pastikan mengisi seluruh layar */
-            overflow: hidden; /* Menghindari scroll yang tidak diinginkan */
+            max-width: 1600px;
+            height: 100%; 
+            overflow: hidden; 
         }
 
         .left-section {
@@ -154,8 +154,8 @@
         <div class="form-wrapper">
             <!-- Left Section with Text -->
             <div class="left-section">
-                <h1>Ashtanga Yoga</h1>
-                <p>Ashtanga Yoga is a dynamic practice that links breath with movement through a set sequence of postures, fostering strength, flexibility, and mindfulness. Rooted in ancient tradition, it encourages discipline and focus, making it a transformative journey for both body and mind.</p>
+                <h1>Join Ramsfit</h1>
+                <p>Our fitness programs are designed to provide you with a comprehensive workout experience, combining elements of strength, flexibility, and mindfulness. Whether you choose Yoga, Pilates, or Body Combat, each class is crafted to cater to your fitness needs and goals. Engage in dynamic movements, boost your cardiovascular health, and enhance your overall well-being with our expert-led sessions.</p>
             </div>
 
             <!-- Form Section -->

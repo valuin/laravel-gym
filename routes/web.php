@@ -4,7 +4,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
-// Rute untuk registrasi custom
 Route::post('/custom-register', [RegistrationController::class, 'store'])->name('custom.register');
 
 Route::get('/', function () {
