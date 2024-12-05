@@ -10,9 +10,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/yoga', function () {
-    return view('yoga');
-})->name('yoga');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -26,6 +23,7 @@ Route::get('/member', function () { return view('member'); })->name('member');
 Route::get('/location', function () { return view('location'); })->name('location');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/yoga', function () { return view('yoga'); })->name('yoga');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

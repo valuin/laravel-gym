@@ -110,7 +110,7 @@
 
     <body
         class="font-sans antialiased text-white h-12 w-full flex flex-col bg-cover bg-center"
-        style="background-image: url('{{ asset('bg.png') }}')"
+        style="background-image: url('{{ asset('bg.png')}}')"
     >
         <div class="mx-auto flex-grow p-10 w-full py-10 relative mb-2 z-10">
             <!-- Header -->
