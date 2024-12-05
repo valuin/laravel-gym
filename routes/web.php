@@ -13,13 +13,14 @@ Route::get('/yoga', function () {
 })->name('yoga');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('welcome');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/pricing', function () { return view('pricing'); })->name('pricing');
 Route::get('/classes', function () { return view('classes'); })->name('classes');
 Route::get('/aboutus', function () { return view('aboutus'); })->name('aboutus');
 Route::get('/homepage', function () { return view('welcome'); })->name('homepage');
+Route::get('/member', function () { return view('member'); })->name('member');
 Route::get('/location', function () { return view('location'); })->name('location');
 
 // Gunakan satu route untuk handle form pendaftaran
