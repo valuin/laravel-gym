@@ -1,129 +1,53 @@
 @extends('layouts.app') @section('content')
-
-<div class="flex flex-wrap w-full mx-auto overflow-hidden">
-    <!-- Image Left -->
-    <div class="w-full md:w-1/3 overflow-hidden order-2 md:order-1">
-        <img
-            src="{{ asset('about1.png') }}"
-            alt="Ramfit Image"
-            class="w-full h-full object-cover rounded-tr-[10%] rounded-br-[10%]"
-        />
-    </div>
-    <!-- Content -->
-    <div
-        class="w-full md:w-1/3 p-6 flex flex-col justify-center order-1 md:order-2"
-    >
-        <h2 class="text-4xl font-bold mb-6">
-            At RamsFit, We Are Committed...
-        </h2>
-        <p class="text-base leading-relaxed mb-6 text-justify">
-            We are empowering individuals to achieve their fitness goals
-            through a supportive and inclusive environment. With
-            state-of-the-art equipment, personalized training programs, and
-            expert instructors, we strive to cater to all levels of fitness,
-            from beginners to seasoned athletes.
-        </p>
-        <a
-            href="#testimonials"
-            class="inline-block bg-white text-black px-4 py-2 rounded-md font-bold hover:bg-green-400 hover:text-white transition duration-200"
-            >View More</a
-        >
-    </div>
-    <!-- Image Right -->
-    <div class="w-full md:w-1/3 overflow-hidden order-3 md:order-3">
-        <img
-            src="{{ asset('about2.png') }}"
-            alt="Ramfit Image"
-            class="w-full h-full object-cover rounded-tl-[10%] rounded-bl-[10%]"
-        />
-    </div>
-</div>
-
 <div class="container mx-auto py-8">
-    <h2 class="text-5xl font-bold text-center mb-10">
-        WHAT THEY SAID ABOUT US
-    </h2>
+    <!-- Profile Section -->
+    <div
+        class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 shadow-lg flex items-center mb-10"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-24"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+            />
+        </svg>
 
-    <div class="flex flex-col space-y-8">
-        <!-- Testimonial 1 -->
-        <div
-            class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 shadow-lg flex items-center hover:shadow-xl transition duration-300"
-        >
-            <img
-                src="{{ asset('testimony-1.png') }}"
-                alt="Lala Martinez"
-                class="w-32 h-32 rounded-md mr-6"
-            />
-            <div id="testimonials" class="text-white">
-                <p class="text-base leading-relaxed mb-4">
-                    "This gym has everything I need for a great workout. The
-                    equipment is modern and well-maintained, and the staff are
-                    always friendly and helpful. The cleanliness of the facility
-                    is also impressive, making it a comfortable place to
-                    exercise. Highly recommended!"
-                </p>
-                <p class="font-bold">Lala Martinez</p>
-                <p class="italic">Student</p>
-            </div>
-        </div>
-        <!-- Testimonial 2 -->
-        <div
-            class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 shadow-lg flex items-center hover:shadow-xl transition duration-300"
-        >
-            <img
-                src="{{ asset('testimony-2.png') }}"
-                alt="Stevan Carpenter"
-                class="w-32 h-32 rounded-md mr-6"
-            />
-            <div class="text-white">
-                <p class="text-base leading-relaxed mb-4">
-                    "Fantastic place to work out. The atmosphere is motivating,
-                    and the classes are fun!"
-                </p>
-                <p class="font-bold">Stevan Carpenter</p>
-                <p class="italic">Engineer</p>
-            </div>
-        </div>
-        <!-- Testimonial 3 -->
-        <div
-            class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 shadow-lg flex items-center hover:shadow-xl transition duration-300"
-        >
-            <img
-                src="{{ asset('testimony-1.png') }}"
-                alt="Josef Mehmed"
-                class="w-32 h-32 rounded-md mr-6"
-            />
-            <div class="text-white">
-                <p class="text-base leading-relaxed mb-4">
-                    "The atmosphere at this gym is fantastic. It’s a friendly
-                    and motivating environment, and I feel comfortable working
-                    out here. Whether you're a beginner or experienced, you’ll
-                    find a supportive community that encourages you to meet your
-                    fitness goals."
-                </p>
-                <p class="font-bold">Josef Mehmed</p>
-                <p class="italic">Teacher</p>
-            </div>
-        </div>
-        <!-- Testimonial 4 -->
-        <div
-            class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 shadow-lg flex items-center hover:shadow-xl transition duration-300"
-        >
-            <img
-                src="{{ asset('testimony-2.png') }}"
-                alt="Julia Rodrigo"
-                class="w-32 h-32 rounded-md mr-6"
-            />
-            <div class="text-white">
-                <p class="text-base leading-relaxed mb-4">
-                    "Love this gym! Clean, spacious, and the staff is super
-                    friendly."
-                </p>
-                <p class="font-bold">Julia Rodrigo</p>
-                <p class="italic">Pharmacist</p>
-            </div>
+        <div class="text-white">
+            <h2 class="text-4xl font-bold mb-2">{{ Auth::user()->name }}</h2>
+            <p class="text-base leading-relaxed">
+                Welcome back to your dashboard!
+            </p>
+            <!-- Additional user info can be added here -->
         </div>
     </div>
-</div>
 
+    <!-- Booked Classes Placeholder -->
+    <div
+        class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 shadow-lg"
+    >
+        <h3 class="text-2xl font-bold mb-4">Your Booked Gym Classes</h3>
+        <p class="text-base leading-relaxed">
+            <!-- Placeholder content -->
+            You have not booked any gym classes yet.
+        </p>
+        <!-- Once classes are booked, this section will list them -->
+        <!-- Example of how classes might be displayed in the future:
+        <ul class="mt-4">
+            <li class="mb-2">
+                <strong>Yoga Class</strong> - Monday, 10 AM
+            </li>
+            <li class="mb-2">
+                <strong>Pilates</strong> - Wednesday, 2 PM
+            </li>
+        </ul>
+        -->
+    </div>
+</div>
 @endsection
