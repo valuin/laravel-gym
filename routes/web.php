@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
+Route::post('/custom-register', [RegistrationController::class, 'store'])->name('custom.register');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,9 +24,6 @@ Route::get('/aboutus', function () { return view('aboutus'); })->name('aboutus')
 Route::get('/homepage', function () { return view('welcome'); })->name('homepage');
 Route::get('/member', function () { return view('member'); })->name('member');
 Route::get('/location', function () { return view('location'); })->name('location');
-
-// Gunakan satu route untuk handle form pendaftaran
-Route::post('/classes', [RegistrationController::class, 'store'])->name('register');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
