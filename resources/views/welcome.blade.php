@@ -150,6 +150,27 @@
                 </div>
             </div>
 
+            <!-- Testimonials Section -->
+            <section class="testimonials-container mt-16">
+                <h2 class="text-5xl font-bold mb-8 text-center">What They Said About Us</h2>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                    <!-- Testimonial Card 1 -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center text-center border border-white/20">
+                        <img src="{{ asset('testimony-1.png') }}" alt="Customer Image" class="w-36 h-36 rounded-full mb-4">
+                        <blockquote class="italic text-gray-300">
+                            "RamsFit has transformed my fitness journey! The trainers are amazing and the facilities are top-notch."
+                        </blockquote>
+                    </div>
+                    <!-- Testimonial Card 2 -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center text-center border border-white/20">
+                        <img  src="{{ asset('testimony-2.png') }}" alt="Customer Image" class="w-36 h-36 rounded-full mb-4">
+                        <blockquote class="italic text-gray-300">
+                            "Amazing community and supportive staff. I've never felt more motivated to reach my fitness goals."
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
+
             @endsection
         </main>
     </body>

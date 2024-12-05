@@ -1,4 +1,4 @@
-<footer class="grid grid-cols-1 justify-items-center items-center min-h-full space-y-4 bg-stone-900 w-full md:p-8">
+<footer class="grid grid-cols-1 justify-items-center items-center min-h-full space-y-4 bg-transparent w-full md:p-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 justify-items-center items-center w-full p-4" id="contacts">
         <!-- Footer Sections -->
         <div class="flex flex-col text-white items-center md:items-start justify-center">

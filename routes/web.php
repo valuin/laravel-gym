@@ -13,7 +13,7 @@ Route::get('/yoga', function () {
 })->name('yoga');
 
 Route::get('/dashboard', function () {
-    return view('welcome');
+    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/pricing', function () { return view('pricing'); })->name('pricing');
