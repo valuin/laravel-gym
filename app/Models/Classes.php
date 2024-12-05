@@ -9,7 +9,8 @@ class Classes extends Model
 {
     use HasFactory;
 
-    // Kolom yang bisa diisi secara massal
+    protected $table = 'classes';
+
     protected $fillable = [
         'city',
         'class',
