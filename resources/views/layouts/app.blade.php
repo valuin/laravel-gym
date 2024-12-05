@@ -71,9 +71,6 @@
                         "p-2",
                         "radial-gradient"
                     );
-                    navLinks.classList.add(
-                        "mr-36"
-                    )
                     navbarContent.classList.remove(
                         "mt-4",
                         "text-white",
@@ -101,7 +98,7 @@
                 navbarContent.style.maxWidth = `${100 - progress * 34}%`;
                 navbarContent.style.borderRadius = `${progress * 9999}px`;
                 const paddingY = 0.75 + progress * 0.25;
-                const paddingX = 1 + progress * 15;
+                const paddingX = 1 + progress * 5;
                 navbarContent.style.padding = `${paddingY}rem ${paddingX}rem`;
             });
         });
