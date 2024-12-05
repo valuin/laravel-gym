@@ -29,6 +29,7 @@
             const logoImg = document.getElementById("logo-img");
             const navbarFlex = document.getElementById("navbar-flex");
             const authLinks = document.getElementById("auth-links");
+            const navLinks = document.getElementById("nav-links");
 
             window.addEventListener("scroll", function () {
                 const scrollPosition = window.scrollY;
@@ -46,14 +47,17 @@
                     navbar.classList.remove("top-4");
                 }
 
-                if (scrollPosition > 75) {
+                if (scrollPosition < 55) {
+                    authLinks.classList.remove("ml-16");
+                }
+                if (scrollPosition > 35) {
                     logoText.style.display = "none";
                     logoImg.style.display = "none"; 
-                    authLinks.classList.remove("mr-16");
-                } else {
+                    authLinks.classList.add("ml-16");
+                }
+                else {
                     logoText.style.display = "flex";
                     logoImg.style.display = "flex";
-                    authLinks.classList.add("mr-16");
                 }
 
                 if (progress > 0) {
@@ -67,9 +71,11 @@
                         "p-2",
                         "radial-gradient"
                     );
+                    navLinks.classList.add(
+                        "mr-36"
+                    )
                     navbarContent.classList.remove(
                         "mt-4",
-                        "pr-20",
                         "text-white",
                         "border-transparent"
                     );
@@ -109,52 +115,105 @@
             <!-- Header -->
             <nav
                 id="navbar"
-                class="w-full fixed z-50 transition-all duration-300 ease-in-out top-0"
+                class="w-11/12 fixed z-50 transition-all duration-300 ease-in-out top-0"
             >
                 <div
                     id="navbar-content"
                     class="mx-auto flex justify-between items-center text-sm p-2 py-5 mt-4 text-white transition-all duration-300 ease-in-out"
                 >
-                    <div class="flex items-center justify-between w-full">
-                        <!-- Brand Logo -->
-                        <div class="logo flex items-center">
-                            <img
-                                src="{{ asset('icon.png') }}"
-                                alt="Ramsfit logo"
-                                class="w-8 h-8"
-                            />
-                            <h2 class="text-xl font-semibold">Ramsfit</h2>
+                    <div
+                        id="navbar-flex"
+                        class="flex items-center justify-between w-full"
+                    >
+                        <!-- Left Container: Logo and Navigation Links -->
+                        <div class="flex items-center space-x-4">
+                            <!-- Brand Logo -->
+                            <a href="/" class="logo-link flex items-center">
+                                <img
+                                    src="{{ asset('icon.png') }}"
+                                    alt="Ramsfit logo"
+                                    class="w-6 h-6"
+                                    id="logo-img"
+                                />
+                                <h2
+                                    id="logo-text"
+                                    class="text-xl font-semibold ml-2"
+                                >
+                                    Ramsfit
+                                </h2>
+                            </a>
+                            <!-- Navigation Links -->
+                            <nav class="hidden md:flex space-x-4 text-base font-semibold" id="nav-links">
+                                <a
+                                    href="{{ route('homepage') }}"
+                                    class="hover:text-green-400 transition"
+                                    >Home</a
+                                >
+                                <a
+                                    href="{{ route('aboutus') }}"
+                                    class="hover:text-green-400 transition"
+                                    >About</a
+                                >
+                                <a
+                                    href="{{ route('pricing') }}"
+                                    class="hover:text-green-400 transition"
+                                    >Pricing</a
+                                >
+                                <a
+                                    href="{{ route('classes') }}"
+                                    class="hover:text-green-400 transition"
+                                    >Classes</a
+                                >
+                                <a
+                                    href="{{ route('location') }}"
+                                    class="hover:text-green-400 transition"
+                                    >Location</a
+                                >
+                            </nav>
                         </div>
-                        <!-- Navigation Links -->
-                        <nav
-                            class="hidden md:flex space-x-4 text-base font-semibold pr-20"
-                        >
-                            <a
-                                href="homepage.html"
-                                class="hover:text-green-400 transition"
-                                >Home</a
-                            >
-                            <a
-                                href="aboutus.html"
-                                class="hover:text-green-400 transition"
-                                >About</a
-                            >
-                            <a
-                                href="pricing.html"
-                                class="hover:text-green-400 transition"
-                                >Pricing</a
-                            >
-                            <a
-                                href="classes.html"
-                                class="hover:text-green-400 transition"
-                                >Classes</a
-                            >
-                            <a
-                                href="locations.html"
-                                class="hover:text-green-400 transition"
-                                >Location</a
-                            >
-                        </nav>
+
+                        <!-- Right Container: Authentication Links -->
+                        <div class="hidden md:flex space-x-4 text-base font-semibold ml-auto" id="auth-links">
+                            @guest
+                                <a
+                                    href="{{ route('login') }}"
+                                    class="hover:text-green-400 transition"
+                                    >Login</a
+                                >
+                                <a
+                                    href="{{ route('register') }}"
+                                    class="hover:text-green-400 transition"
+                                    >Register</a
+                                >
+                            @else
+                                <div class="relative">
+                                    <button class="hover:text-green-400 transition focus:outline-none">
+                                        {{ Auth::user()->name }}
+                                    </button>
+                                    <div
+                                        class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden group-hover:block"
+                                    >
+                                        <a
+                                            href="{{ route('dashboard') }}"
+                                            class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                                            >Dashboard</a
+                                        >
+                                        <form
+                                            method="POST"
+                                            action="{{ route('logout') }}"
+                                        >
+                                            @csrf
+                                            <button
+                                                type="submit"
+                                                class="w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
+                                            >
+                                                Logout
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            @endguest
+                        </div>
                     </div>
                 </div>
             </nav>
