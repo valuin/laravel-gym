@@ -30,24 +30,23 @@
 
     <!-- Booked Classes Placeholder -->
     <div
-        class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 shadow-lg"
-    >
-        <h3 class="text-2xl font-bold mb-4">Your Booked Gym Classes</h3>
+    class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 shadow-lg"
+>
+    <h3 class="text-2xl font-bold mb-4">Your Booked Gym Classes</h3>
+    @if($classes->isEmpty())
         <p class="text-base leading-relaxed">
-            <!-- Placeholder content -->
             You have not booked any gym classes yet.
         </p>
-        <!-- Once classes are booked, this section will list them -->
-        <!-- Example of how classes might be displayed in the future:
+    @else
         <ul class="mt-4">
-            <li class="mb-2">
-                <strong>Yoga Class</strong> - Monday, 10 AM
-            </li>
-            <li class="mb-2">
-                <strong>Pilates</strong> - Wednesday, 2 PM
-            </li>
+            @foreach($classes as $class)
+                <li class="mb-2">
+                    <strong>{{ $class->class }}</strong> - {{ $class->session }}
+                    ({{ $class->city }})
+                </li>
+            @endforeach
         </ul>
-        -->
-    </div>
+    @endif
+</div>
 </div>
 @endsection

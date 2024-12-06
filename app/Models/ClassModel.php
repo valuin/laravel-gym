@@ -9,9 +9,14 @@ class ClassModel extends Model
 {
     use HasFactory;
 
-    // Nama tabel di database
-    protected $table = 'classes';
+    protected $table = 'classes'; // Nama tabel di database
 
-    // Kolom yang dapat diisi
-    protected $fillable = ['city', 'club', 'name', 'whatsapp', 'email'];
+    protected $fillable = [
+        'city',
+        'class',
+        'session',
+        'name',
+        'wa_number',
+        'email',
+    ];
 }

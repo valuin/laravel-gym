@@ -161,7 +161,7 @@
             <!-- Form Section -->
             <div class="form-container">
                 <h2>Try Free for 7 Days</h2>
-                <form action="{{ route('custom.register') }}" method="POST">
+                <form action="{{ route('yesking') }}" method="POST">
                     @csrf
 
                     <label for="city">City *</label>
