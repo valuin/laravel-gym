@@ -3,96 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RamsFit</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Yoga Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white; 
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Mengisi seluruh layar */
+            width: 100%;
+        }
+
+        .form-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            width: 100%;
+            max-width: 1600px;
+            height: 100%; 
+            overflow: hidden; 
+        }
+
+        .left-section {
+            flex: 1;
+            background-image: url('https://www.shutterstock.com/image-photo/barbell-weight-lowkey-fitness-dark-600nw-1835763928.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .left-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .left-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .form-container {
+            flex: 1;
+            background-color: black;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            margin-top: 150px;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0 5px;
+            font-size: 1rem;
+            color: white;
+        }
+
+        select, input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            background-color: #333;
+            color: white;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group label {
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        .error-list {
+            margin-top: 20px;
+            color: red;
+        }
+
+        .error-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .error-list ul li {
+            background-color: #f8d7da;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+    </style>
 </head>
-<body class="font-sans bg-gray-100">
-    <div class="flex flex-row justify-center items-center min-h-screen bg-black">
-        <!-- Left Section -->
-        <div 
-            class="flex flex-1 flex-col justify-center items-start text-left p-8 text-white bg-cover bg-center" 
-            style="background-image: url('https://www.shutterstock.com/image-photo/barbell-weight-lowkey-fitness-dark-600nw-1835763928.jpg');"
-        >
-            <h1 class="text-3xl font-bold">Join RamsFit</h1>
-            <p class="mt-4 leading-relaxed">
-                Our fitness programs are designed to provide you with a comprehensive workout experience, combining elements of strength, flexibility, and mindfulness. Whether you choose Yoga, Pilates, or Body Combat, each class is crafted to cater to your fitness needs and goals. Engage in dynamic movements, boost your cardiovascular health, and enhance your overall well-being with our expert-led sessions. Discover the perfect balance between body and mind in a supportive and motivating environment.
-            </p>
-        </div>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <!-- Left Section with Text -->
+            <div class="left-section">
+                <h1>Join Ramsfit</h1>
+                <p>Our fitness programs are designed to provide you with a comprehensive workout experience, combining elements of strength, flexibility, and mindfulness. Whether you choose Yoga, Pilates, or Body Combat, each class is crafted to cater to your fitness needs and goals. Engage in dynamic movements, boost your cardiovascular health, and enhance your overall well-being with our expert-led sessions.</p>
+            </div>
 
-        <!-- Right Section -->
-        <div class="flex-1 bg-black text-white p-8 rounded-lg">
-            <h2 class="text-2xl font-semibold mb-4">Try Free For 7 Days</h2>
-            
-            <!-- Tampilkan pesan sukses -->
-            @if (session('success'))
-                <div class="p-4 mb-4 text-green-800 bg-green-100 rounded">
-                    {{ session('success') }}
-                </div>
-            @endif
+            <!-- Form Section -->
+            <div class="form-container">
+                <h2>Try Free for 7 Days</h2>
+                <form action="{{ route('custom.register') }}" method="POST">
+                    @csrf
 
-            <!-- Tampilkan pesan error -->
-            @if ($errors->any())
-                <div class="p-4 mb-4 text-red-800 bg-red-100 rounded">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
-            <form action="{{ route('register') }}" method="POST" class="space-y-4">
-                @csrf
-                <div class="form-group">
-                    <label for="city" class="block text-sm mb-2">City *</label>
-                    <select id="city" name="city" required class="w-full p-2 rounded border border-gray-300 text-black">
+                    <label for="city">City *</label>
+                    <select name="city" id="city" required>
                         <option value="">Select City</option>
-                        <option value="City1">Pondok Labu</option>
-                        <option value="City2">Kemayoran</option>
+                        <option value="Pondok Labu">Pondok Labu</option>
+                        <option value="Kemayoran">Kemayoran</option>
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="class" class="block text-sm mb-2">Class *</label>
-                    <select id="class" name="class" required class="w-full p-2 rounded border border-gray-300 text-black">
+
+                    <label for="class">Class *</label>
+                    <select name="class" id="class" required>
                         <option value="">Select Class</option>
-                        <option value="Class1">Yoga</option>
-                        <option value="Class2">Pilates</option>
-                        <option value="Class3">Body Combat</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Pilates">Pilates</option>
+                        <option value="Body Combat">Body Combat</option>
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="session" class="block text-sm mb-2">Training Session *</label>
-                    <select id="session" name="session" required class="w-full p-2 rounded border border-gray-300 text-black">
+
+                    <label for="session">Training Session *</label>
+                    <select name="session" id="session" required>
                         <option value="">Select Hour</option>
-                        <option value="Session1">Morning (09.00 - 10.00)</option>
-                        <option value="Session2">Evening (16.00 - 17.00)</option>
-                        <option value="Session3">Night (19.00 - 20.00)</option>
+                        <option value="Morning (08.00 - 09.00)">Morning (08.00 - 09.00)</option>
+                        <option value="Evening (16.00 - 17.00)">Evening (16.00 - 17.00)</option>
+                        <option value="Night (19.00 - 20.00)">Night (19.00 - 20.00)</option>
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="name" class="block text-sm mb-2">Name *</label>
-                    <input type="text" id="name" name="name" required class="w-full p-2 rounded border border-gray-300 text-black">
-                </div>
-                <div class="form-group">
-                    <label for="wa_number" class="block text-sm mb-2">WhatsApp Number *</label>
-                    <input type="text" id="wa_number" name="wa_number" required class="w-full p-2 rounded border border-gray-300 text-black">
-                </div>
-                <div class="form-group">
-                    <label for="email" class="block text-sm mb-2">Email *</label>
-                    <input type="email" id="email" name="email" required class="w-full p-2 rounded border border-gray-300 text-black">
-                </div>
-                <div class="form-group flex items-center">
-                    <input type="checkbox" id="terms" name="terms" required class="mr-2">
-                    <label for="terms" class="text-sm">I’ve read and agreed to the terms and conditions</label>
-                </div>
-                <div class="form-group flex items-center">
-                    <input type="checkbox" id="health" name="health" required class="mr-2">
-                    <label for="health" class="text-sm">I’ve read and agree to the declaration of health</label>
-                </div>
-                <button type="submit" class="w-full p-3 bg-gray-700 text-white rounded hover:bg-green-500">
-                    Register Now
-                </button>
-            </form>
+
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                    <label for="wa_number">WhatsApp Number *</label>
+                    <input type="text" id="wa_number" name="wa_number" placeholder="Your WhatsApp Number" required>
+
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="terms" required>
+                            I’ve read and agreed to the <a href="#" style="color: #4CAF50;">terms and conditions</a>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="health" required>
+                            I’ve read and agree to the <a href="#" style="color: #4CAF50;">declaration of health</a>
+                        </label>
+                    </div>
+
+                    <button type="submit">Register Now</button>
+                </form>
+
+                @if ($errors->any())
+                    <div class="error-list">
+                        <h3>Errors:</h3>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
         </div>
     </div>
 </body>
