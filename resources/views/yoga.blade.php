@@ -39,7 +39,7 @@
 
         .left-section {
             flex: 1;
-            background-image: url('https://www.shutterstock.com/image-photo/barbell-weight-lowkey-fitness-dark-600nw-1835763928.jpg');
+            background-image: url('https://tfx.sg/wp-content/uploads/2023/11/INBODY-ANALYSIS_HOMEPAGE-BANNER-scaled.jpg');
             background-size: cover;
             background-position: center;
             background-color: rgba(0, 0, 0, 0.7);
@@ -126,8 +126,13 @@
         }
 
         .checkbox-group label {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: white;
+            margin-bottom: 10px; /* Memberi jarak antar checkbox */
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px; /* Memberi jarak antara checkbox dan teks */
         }
 
         .error-list {
@@ -147,6 +152,56 @@
             border-radius: 5px;
         }
 
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .modal-content {
+            background-color: black;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            color: white;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .modal-content p {
+            background-color: black;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            color: white;
+            position: relative;
+            max-height: 400px; 
+            overflow-y: auto; 
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -154,14 +209,14 @@
         <div class="form-wrapper">
             <!-- Left Section with Text -->
             <div class="left-section">
-                <h1>Join Ramsfit</h1>
+                <h1>Join RamsFit</h1>
                 <p>Our fitness programs are designed to provide you with a comprehensive workout experience, combining elements of strength, flexibility, and mindfulness. Whether you choose Yoga, Pilates, or Body Combat, each class is crafted to cater to your fitness needs and goals. Engage in dynamic movements, boost your cardiovascular health, and enhance your overall well-being with our expert-led sessions.</p>
             </div>
 
             <!-- Form Section -->
             <div class="form-container">
                 <h2>Try Free for 7 Days</h2>
-                <form action="{{ route('custom.register') }}" method="POST">
+                <form action="{{ route('yesking') }}" method="POST">
                     @csrf
 
                     <label for="city">City *</label>
@@ -193,20 +248,12 @@
                     <label for="wa_number">WhatsApp Number *</label>
                     <input type="text" id="wa_number" name="wa_number" placeholder="Your WhatsApp Number" required>
 
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-
                     <div class="checkbox-group">
                         <label>
                             <input type="checkbox" name="terms" required>
-                            I’ve read and agreed to the <a href="#" style="color: #4CAF50;">terms and conditions</a>
+                            I’ve read and agreed to the  <a href="#" id="termsLink" style="color: #4CAF50;">terms and conditions</a>
                         </label>
-                        <label>
-                            <input type="checkbox" name="health" required>
-                            I’ve read and agree to the <a href="#" style="color: #4CAF50;">declaration of health</a>
-                        </label>
-                    </div>
-
+                       
                     <button type="submit">Register Now</button>
                 </form>
 
@@ -223,5 +270,46 @@
             </div>
         </div>
     </div>
+
+      <!-- Modal -->
+      <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Terms & Conditions for Gym Class Subscription</h2>
+            <p>
+    <b>1.</b> Subscription is valid only for members who have completed registration and full payment according to the chosen package.<br>
+    <b>2.</b> Membership activation starts from the date of verified payment.<br>
+    <b>3.</b> Payments must be made upfront and are non-refundable, with renewal required before expiration to avoid additional fees.<br>
+    <b>4.</b> Members can only access classes and facilities included in their selected package, and subscriptions are non-transferable.<br>
+    <b>5.</b> Class bookings must be made in advance, with cancellations allowed up to 12 hours before the class to avoid penalties.<br>
+    <b>6.</b> Members are responsible for their own health and must ensure they are fit before participating in any class, as the gym is not liable for injuries caused by personal negligence.<br>
+    <b>7.</b> Subscription cancellation is allowed at any time, but fees are non-refundable, and the gym may terminate memberships for rule violations.<br>
+    <b>8.</b> Members are required to follow all gym rules, including cleanliness and proper use of facilities.<br>
+    <b>9.</b> The gym reserves the right to modify terms and conditions with prior notice.<br>
+    <b>10.</b> By subscribing, members agree to these terms and conditions.
+</p>
+
+        </div>
+    </div>
+
+    <script>
+        const termsModal = document.getElementById("termsModal");
+        const closeModal = document.querySelector(".close");
+
+        document.getElementById("termsLink").addEventListener("click", function(event) {
+            event.preventDefault();
+            termsModal.style.display = "flex";
+        });
+
+        closeModal.addEventListener("click", function() {
+            termsModal.style.display = "none";
+        });
+
+        window.onclick = function(event) {
+            if (event.target == termsModal) {
+                termsModal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
