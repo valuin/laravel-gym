@@ -126,7 +126,7 @@
                             major calories.
                         </p>
                         <div class="flex items-center mt-4">
-                            <span class="text-sm">45 mins</span>
+                            <span class="text-sm">60 mins</span>
                             <span class="mx-2">•</span>
                             <span class="text-sm">Intermediate</span>
                         </div>
@@ -142,7 +142,7 @@
                             flexibility and posture.
                         </p>
                         <div class="flex items-center mt-4">
-                            <span class="text-sm">50 mins</span>
+                            <span class="text-sm">60 mins</span>
                             <span class="mx-2">•</span>
                             <span class="text-sm">All Levels</span>
                         </div>
