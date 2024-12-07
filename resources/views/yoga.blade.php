@@ -164,7 +164,6 @@
             display: none;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
         }
 
         .modal-content {
