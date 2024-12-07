@@ -30,7 +30,7 @@
             <h1 class="text-6xl font-bold mb-5">RamsFit</h1>
             <h2 class="text-2xl mb-10">THE BEST GYM IN TOWN</h2>
             <a
-                href="classes.html"
+                href="{{ route('member') }}"
                 class="cta-button inline-block bg-white text-black font-bold py-2 px-4 rounded hover:bg-green-400 transition"
             >
                 Join Now
