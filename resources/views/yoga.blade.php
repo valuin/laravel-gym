@@ -23,7 +23,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Mengisi seluruh layar */
+            height: 100vh; 
             width: 100%;
         }
 
@@ -66,7 +66,7 @@
         .form-container {
             flex: 1;
             background-color: black;
-            padding: 40px;
+            padding: 5px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
@@ -128,11 +128,11 @@
         .checkbox-group label {
             font-size: 1rem;
             color: white;
-            margin-bottom: 10px; /* Memberi jarak antar checkbox */
+            margin-bottom: 10px; 
         }
 
         .checkbox-group input[type="checkbox"] {
-            margin-right: 10px; /* Memberi jarak antara checkbox dan teks */
+            margin-right: 10px; 
         }
 
         .error-list {
@@ -164,8 +164,7 @@
             display: none;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
-        }
+            }
 
         .modal-content {
             background-color: black;
@@ -202,6 +201,16 @@
             cursor: pointer;
         }
 
+        .alert-danger {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -216,6 +225,17 @@
             <!-- Form Section -->
             <div class="form-container">
                 <h2>Try Free for 7 Days</h2>
+                
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form action="{{ route('yesking') }}" method="POST">
                     @csrf
 

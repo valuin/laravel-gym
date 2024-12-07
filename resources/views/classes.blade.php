@@ -29,34 +29,34 @@
                     [
                         'name' => 'Yoga',
                         'price' => '$19',
-                        'features' => ['Access to gym facilities', 'Free Wi-Fi', 'Locker room access'],
+                        'features' => ['Meditation Zone', 'Yoga Props Lending', 'Outdoor Yoga Classes'],
                         'image' => 'https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2021/06/29044522/Yoga.jpg', // URL Background Image
-                        'url' => route('yoga') // Link tujuan
+                        'url' => route('yoga') 
                     ],
                     [
                         'name' => 'Body Combat',
                         'price' => '$29',
-                        'features' => ['Group Classes', 'Cardio Equipment', 'Guided Sessions'],
+                        'features' => ['Punching Bag Zone', 'Heart Rate Monitor Integration', 'Combat Gear Access'],
                         'image' => 'https://prod-everyoneactive-wp.s3.eu-west-2.amazonaws.com/wp-content/uploads/2019/02/14135347/FW17-BODYCOMBAT-BRAND-IMAGE-cropped-1024x576.jpg', // URL Background Image
-                        'url' => route('yoga') // Link tujuan
+                        'url' => route('yoga') 
                     ],
                     [
                         'name' => 'Pilates',
                         'price' => '$25',
-                        'features' => ['Flexibility Training', 'Mindfulness Sessions', 'Premium Mats'],
+                        'features' => ['Pilates Equipment Access', 'Group Training', 'Core Strength Assessment'],
                         'image' => 'https://cdn.prod.website-files.com/6474525654e763b2569e6b78/6541bc6dc2cdfb8dc7f64b89_64a4feaaba4b95d0185337ef_foundation-banner-image2.webp', // URL Background Image
-                        'url' => route('yoga') // Link tujuan
+                        'url' => route('yoga') 
                     ]
                 ];
             @endphp
 
             @foreach ($classes as $class)
-            <!-- Frame yang bisa diklik -->
+            
             <a href="{{ $class['url'] }}" class="relative border rounded-lg shadow-lg w-full md:w-1/3 bg-cover bg-center text-white transition transform hover:scale-105 hover:shadow-[0_4px_20px_rgba(0,128,0,0.8)]" 
                  style="background-image: url('{{ $class['image'] }}');">
-                <!-- Overlay -->
+               
                 <div class="absolute inset-0 bg-black bg-opacity-60 rounded-lg"></div>
-                <!-- Content -->
+               
                 <div class="relative p-6">
                     <h2 class="text-2xl font-semibold mb-4 text-center">{{ $class['name'] }}</h2>
                     <p class="text-center text-xl font-bold mb-4">{{ $class['price'] }}<span class="text-sm font-normal">/month</span></p>

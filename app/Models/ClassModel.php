@@ -9,7 +9,7 @@ class ClassModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'classes'; // Nama tabel di database
+    protected $table = 'classes'; 
 
     protected $fillable = [
         'city',
