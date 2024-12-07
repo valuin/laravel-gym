@@ -28,34 +28,50 @@
         <!-- Additional Footer Sections -->
         <div class="flex flex-col text-white items-start justify-center md:border-r-2 border-white w-full md:w-auto pr-4 md:pr-16 ml-8">
             <p class="text-center font-semibold text-xl mb-3 md:text-start">Membership</p>
-            <div class="space-y-2">
-                <p class="text-center md:text-start">Membership</p>
-                <p class="text-center md:text-start">Join Online</p>
+            <div class="space-y-2 ">
+                <a href="{{ route('pricing') }}">
+                    <p class="text-center md:text-start hover:text-emerald-500">Membership</p>
+                </a>
+                <a href="{{ route('member') }}">
+                    <p class="text-center md:text-start hover:text-emerald-500">Join Online</p>
+                </a>
             </div>
         </div>
         <div class="flex flex-col text-white items-start justify-center md:border-r-2 border-white w-full md:w-auto pr-4 md:pr-24">
             <p class="text-center font-semibold text-xl mb-3 md:text-start">Classes</p>
             <div class="space-y-2">
-                <p class="text-center md:text-start">Classes</p>
-                <p class="text-center md:text-start">Book Online</p>
+                <a href="{{ route('classes') }}">
+                    <p class="text-center md:text-start hover:text-emerald-500">Classes</p>
+                </a>
+                <a href="{{ route('yoga') }}">
+                    <p class="text-center md:text-start hover:text-emerald-500">Book Online</p>
+                </a>
             </div>
         </div>
         <div class="flex flex-col md:border-r-2 border-white text-white items-start justify-center w-full md:w-auto pr-4 md:pr-24">
             <p class="text-center font-semibold text-xl mb-3 md:text-start">Branch</p>
             <div class="space-y-2">
-                <p class="text-center md:text-start">Near You</p>
-                <p class="text-center md:text-start">Our Branches</p>
+                <a href="{{ route('location') }}">
+                    <p class="text-center md:text-start hover:text-emerald-500">Near You</p>
+                </a>
+                <a href="{{ route('location') }}">
+                    <p class="text-center md:text-start hover:text-emerald-500">Our Branches</p>
+                </a>
             </div>
         </div>
         <div class="flex flex-col text-white items-start justify-center w-full md:w-auto pr-4 md:pr-24">
             <p class="text-center font-semibold text-xl mb-3 md:text-start">About</p>
             <div class="space-y-2">
-                <p class="text-center md:text-start">Why Ramsfit</p>
-                <p class="text-center md:text-start">FAQ</p>
+                <a href="{{ route('aboutus') }}">
+                    <p class="text-center md:text-start hover:text-emerald-500">Why Ramsfit</p>
+                </a>
+                <a href="{{ route('aboutus') }}">
+                    <p class="text-center md:text-start hover:text-emerald-500">FAQ</p>
+                </a>
             </div>
         </div>
     </div>
-    <div class="w-full bottom- flex flex-col justify-center">
+    <div class="w-full pb-10 flex flex-col justify-center">
         <p class="text-white text-center">© 2024 Ramsfit. All rights reserved.</p>
     </div>
 </footer>

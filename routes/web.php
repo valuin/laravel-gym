@@ -11,7 +11,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/homepage', function () {
     return view('welcome');
 })->name('homepage');
@@ -23,23 +22,6 @@ Route::get('/aboutus', function () {
 Route::get('/location', function () {
     return view('location');
 })->name('location');
-
-Route::get('/yoga', function () {
-    return view('yoga');
-})->name('yoga');
-
-Route::get('/body_combat', function () {
-    return view('body_combat');
-})->name('body_combat');
-
-Route::get('/pilates', function () {
-    return view('pilates');
-})->name('pilates');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/pricing', function () {
     return view('pricing');
 })->name('pricing');
