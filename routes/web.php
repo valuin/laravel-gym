@@ -5,6 +5,7 @@ use App\Http\Controllers\ClassController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CustomRegisterController;
+use App\Http\Controllers\MemberController;
 
 
 Route::get('/', function () {
@@ -29,7 +30,9 @@ Route::get('/classes', function () {
     return view('classes');
 })->name('classes');
 Route::post('/yesking', [ClassController::class, 'register'])->name('yesking');
+Route::post('/register', [MemberController::class, 'store'])->name('register');
 Route::get('/member', [MemberController::class, 'index'])->name('member');
+Route::post('/member', [MemberController::class, 'store'])->name('member.store');
 
 
 Route::middleware('auth')->group(function () {

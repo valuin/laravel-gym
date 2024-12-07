@@ -28,15 +28,15 @@
   <!-- Stats Section -->
   <section class="grid grid-cols-3 gap-6 text-center mt-12 mx-10">
     <div class="bg-[#262626] py-10 rounded-lg">
-      <h2 class="text-6xl font-bold">2</h2>
+      <h2 class="text-6xl font-bold">25</h2>
       <p class="text-xl uppercase">Clubs</p>
     </div>
     <div class="bg-[#262626] py-10 rounded-lg">
-      <h2 class="text-6xl font-bold">50</h2>
+      <h2 class="text-6xl font-bold">5000</h2>
       <p class="text-xl uppercase">Classes per month</p>
     </div>
     <div class="bg-[#262626] py-10 rounded-lg">
-      <h2 class="text-6xl font-bold">5</h2>
+      <h2 class="text-6xl font-bold">85</h2>
       <p class="text-xl uppercase">Classes</p>
     </div>
   </section>

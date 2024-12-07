@@ -75,6 +75,9 @@
                         "p-2",
                         "radial-gradient"
                     );
+                    navLinks.classList.add(
+                        "mr-36"
+                    )
                     navbarContent.classList.remove(
                         "mt-4",
                         "text-white",
