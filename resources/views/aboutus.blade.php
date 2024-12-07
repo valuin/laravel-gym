@@ -1,5 +1,4 @@
 @extends('layouts.app') @section('content')
-
 <div class="container mx-auto py-8">
     <!-- Header Section -->
     <div class="flex flex-col items-center justify-center px-4">

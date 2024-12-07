@@ -1,4 +1,6 @@
 @extends('layouts.app') @section('content')
+<!DOCTYPE html>
+
 <div class="container mx-auto py-8">
     <!-- Profile Section -->
     <div
