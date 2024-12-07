@@ -40,17 +40,22 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/pricing', function () { return view('pricing'); })->name('pricing');
-Route::get('/classes', function () { return view('classes'); })->name('classes');
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/pricing', function () {
+    return view('pricing');
+})->name('pricing');
+Route::get('/classes', function () {
+    return view('classes');
+})->name('classes');
 Route::post('/yesking', [ClassController::class, 'register'])->name('yesking');
 Route::get('/member', [MemberController::class, 'index'])->name('member');
 
 
 Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/yoga', function () { return view('yoga');})->name('yoga');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ClassModel;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class ClassController extends Controller
@@ -18,9 +19,10 @@ class ClassController extends Controller
             'session' => 'required|string|max:255',
             'name' => 'required|string|max:255',
             'wa_number' => 'required|string|max:255',
-            'email' => 'required|email|unique:classes,email',
-            'terms' => 'required|in:on', 
-            ]);
+            'terms' => 'required|in:on',
+        ]);
+
+        $validated['email'] = Auth::user()->email;
 
         
         \Log::info('Data tervalidasi:', $validated);
