@@ -268,9 +268,6 @@
                     <label for="wa_number">WhatsApp Number *</label>
                     <input type="text" id="wa_number" name="wa_number" placeholder="Your WhatsApp Number" required>
 
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-
                     <div class="checkbox-group">
                         <label>
                             <input type="checkbox" name="terms" required>

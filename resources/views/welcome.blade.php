@@ -88,7 +88,7 @@
                 class="flex flex-col justify-center items-center mt-32 gap-6 text-center md:text-left"
             >
                 <!-- Section Title and Description -->
-                <div class="flex-col">
+                <div class="flex-col justify-center text-center">
                     <span class="font-semibold text-5xl">Featured Class</span>
                     <p>
                         Unleash your potential with RamsFit's signature
