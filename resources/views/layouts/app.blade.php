@@ -21,6 +21,11 @@
         @endif
     </head>
 
+    <script
+        src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+        defer
+    ></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const navbar = document.getElementById("navbar");
@@ -52,10 +57,9 @@
                 }
                 if (scrollPosition > 35) {
                     logoText.style.display = "none";
-                    logoImg.style.display = "none"; 
+                    logoImg.style.display = "none";
                     authLinks.classList.add("ml-16");
-                }
-                else {
+                } else {
                     logoText.style.display = "flex";
                     logoImg.style.display = "flex";
                 }
@@ -101,7 +105,7 @@
                 navbarContent.style.maxWidth = `${100 - progress * 34}%`;
                 navbarContent.style.borderRadius = `${progress * 9999}px`;
                 const paddingY = 0.75 + progress * 0.25;
-                const paddingX = 1 + progress * 15;
+                const paddingX = 1 + progress * 5;
                 navbarContent.style.padding = `${paddingY}rem ${paddingX}rem`;
             });
         });
@@ -109,7 +113,7 @@
 
     <body
         class="font-sans antialiased text-white h-12 w-full flex flex-col bg-cover bg-center"
-        style="background-image: url('{{ asset('bg.png') }}')"
+        style="background-image: url('{{ asset('bg.png')}}')"
     >
         <div class="mx-auto flex-grow p-10 w-full py-10 relative mb-2 z-10">
             <!-- Header -->
@@ -143,7 +147,10 @@
                                 </h2>
                             </a>
                             <!-- Navigation Links -->
-                            <nav class="hidden md:flex space-x-4 text-base font-semibold" id="nav-links">
+                            <nav
+                                class="hidden md:flex space-x-4 text-base font-semibold"
+                                id="nav-links"
+                            >
                                 <a
                                     href="{{ route('homepage') }}"
                                     class="hover:text-green-400 transition"
@@ -173,45 +180,69 @@
                         </div>
 
                         <!-- Right Container: Authentication Links -->
-                        <div class="hidden md:flex space-x-4 text-base font-semibold ml-auto" id="auth-links">
+                        <div
+                            class="hidden md:flex space-x-6 text-base font-semibold ml-auto"
+                            id="auth-links"
+                        >
                             @guest
-                                <a
-                                    href="{{ route('login') }}"
-                                    class="hover:text-green-400 transition"
-                                    >Login</a
-                                >
-                                <a
-                                    href="{{ route('register') }}"
-                                    class="hover:text-green-400 transition"
-                                    >Register</a
-                                >
+                            <a
+                                href="{{ route('login') }}"
+                                class="hover:text-green-400 transition"
+                                >Login</a
+                            >
+                            <a
+                                href="{{ route('register') }}"
+                                class="hover:text-green-400 transition"
+                                >Register</a
+                            >
                             @else
-                                <div class="relative">
-                                    <button class="hover:text-green-400 transition focus:outline-none">
+                            <div class="relative" x-data="{ open: false }">
+                                <div class="flex flex-row">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        class="size-6"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                    <button
+                                        @click="open = !open"
+                                        class="hover:text-green-400 transition focus:outline-none"
+                                    >
                                         {{ Auth::user()->name }}
                                     </button>
-                                    <div
-                                        class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden group-hover:block"
-                                    >
-                                        <a
-                                            href="{{ route('dashboard') }}"
-                                            class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                                            >Dashboard</a
-                                        >
-                                        <form
-                                            method="POST"
-                                            action="{{ route('logout') }}"
-                                        >
-                                            @csrf
-                                            <button
-                                                type="submit"
-                                                class="w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
-                                            >
-                                                Logout
-                                            </button>
-                                        </form>
-                                    </div>
                                 </div>
+                                <!-- Dropdown Menu -->
+                                <div
+                                    x-show="open"
+                                    @click.away="open = false"
+                                    x-transition
+                                    class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg origin-top-right"
+                                >
+                                    <a
+                                        href="{{ route('dashboard') }}"
+                                        class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                                        >Dashboard</a
+                                    >
+                                    <form
+                                        method="POST"
+                                        action="{{ route('logout') }}"
+                                    >
+                                        @csrf
+                                        <button
+                                            type="submit"
+                                            class="w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
+                                        >
+                                            Logout
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
                             @endguest
                         </div>
                     </div>

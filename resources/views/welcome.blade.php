@@ -64,19 +64,112 @@
                 </div>
             </section>
 
-            <div class="flex flex-col md:flex-row justify-center items-center mt-32 gap-6 text-center md:text-left">
+            <div
+                class="flex flex-col md:flex-row justify-center items-center mt-32 gap-6 text-center md:text-left"
+            >
                 <img
                     src="{{ asset('home2.png') }}"
                     alt="Gym equipment"
                     class="w-1/2 h-auto inline-block"
                 />
                 <div class="flex flex-col items-center md:items-start">
-                    <h2 class="text-5xl font-bold">Membership starts from Rp 35.000/day</h2>
+                    <h2 class="text-5xl font-bold">
+                        Membership starts from Rp 35.000/day
+                    </h2>
                     <p class="mt-4">
-                        Enjoy unlimited workouts at all RamsFit clubs with premium facilities and access to exclusive fitness classes.
+                        Enjoy unlimited workouts at all RamsFit clubs with
+                        premium facilities and access to exclusive fitness
+                        classes.
                     </p>
                 </div>
             </div>
+
+            <div
+                class="flex flex-col justify-center items-center mt-32 gap-6 text-center md:text-left"
+            >
+                <!-- Section Title and Description -->
+                <div class="flex-col justify-center text-center">
+                    <span class="font-semibold text-5xl">Featured Class</span>
+                    <p>
+                        Unleash your potential with RamsFit's signature
+                        workouts. Energizing, results-driven classes designed to
+                        help you train like a pro!
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-row gap-6 items-start mt-8 w-full justify-center flex-wrap"
+                >
+                    <!-- Card 1: Yoga -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all border border-white/20 w-full sm:w-1/2 md:w-1/3"
+                    >
+                        <h3 class="text-2xl font-semibold mb-4">Yoga</h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            Find your inner balance with our expert-led yoga
+                            sessions.
+                        </p>
+                        <div class="flex items-center mt-4">
+                            <span class="text-sm">60 mins</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-sm">All Levels</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Body Combat -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all border border-white/20 w-full sm:w-1/2 md:w-1/3"
+                    >
+                        <h3 class="text-2xl font-semibold mb-4">Body Combat</h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            High-energy martial arts-inspired workout that burns
+                            major calories.
+                        </p>
+                        <div class="flex items-center mt-4">
+                            <span class="text-sm">45 mins</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-sm">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Pilates -->
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all border border-white/20 w-full sm:w-1/2 md:w-1/3"
+                    >
+                        <h3 class="text-2xl font-semibold mb-4">Pilates</h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            Core-strengthening exercises for improved
+                            flexibility and posture.
+                        </p>
+                        <div class="flex items-center mt-4">
+                            <span class="text-sm">50 mins</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-sm">All Levels</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials-container mt-16">
+                <h2 class="text-5xl font-bold mb-8 text-center">What They Said About Us</h2>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                    <!-- Testimonial Card 1 -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center text-center border border-white/20">
+                        <img src="{{ asset('testimony-1.png') }}" alt="Customer Image" class="w-36 h-36 rounded-full mb-4">
+                        <blockquote class="italic text-gray-300">
+                            "RamsFit has transformed my fitness journey! The trainers are amazing and the facilities are top-notch."
+                        </blockquote>
+                    </div>
+                    <!-- Testimonial Card 2 -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center text-center border border-white/20">
+                        <img  src="{{ asset('testimony-2.png') }}" alt="Customer Image" class="w-36 h-36 rounded-full mb-4">
+                        <blockquote class="italic text-gray-300">
+                            "Amazing community and supportive staff. I've never felt more motivated to reach my fitness goals."
+                        </blockquote>
+                    </div>
+                </div>
+            </section>
 
             @endsection
         </main>

@@ -7,7 +7,7 @@
          </header>
 
     <!-- Hero Section -->
-    <div class="relative h-[500px] w-full bg-cover bg-center" style="background-image: url('https://www.eastbankclub.com/sites/default/files/styles/slyder_image/public/group_yoga.jpg?h=4027ec22&itok=9izVdCl0.jpg');">
+    <div class="relative h-[500px] w-full bg-cover bg-center" style="background-image: url('https://www.rishikulyogshalarishikesh.com/blog/wp-content/uploads/2024/08/ashtanga-vinyasa-yoga-1024x682.jpg');">
         <!-- Overlay -->
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         <!-- Content -->
