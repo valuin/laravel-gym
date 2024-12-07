@@ -94,8 +94,8 @@
 
             <!-- Payment Methods -->
             <div class="form-group">
-                <label for="payment" class="block text-sm mb-2">Payment Methods *</label>
-                <select id="payment" name="payment" required class="w-full p-2 rounded border border-gray-300 text-black">
+                <label for="payment_method" class="block text-sm mb-2">Payment Methods *</label>
+                <select id="payment_method" name="payment_method" required class="w-full p-2 rounded border border-gray-300 text-black">
                     <option value="">Select Payment Method</option>
                     <option value="credit_card">Credit Card</option>
                     <option value="bank_transfer">Bank Transfer</option>

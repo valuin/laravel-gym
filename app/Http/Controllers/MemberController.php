@@ -16,7 +16,7 @@ class MemberController extends Controller
             'wa_number' => 'required|string|max:15',
             'email' => 'required|email|unique:members,email',
             'membership' => 'required|in:daily,monthly,annual',
-            'payment' => 'required|in:credit_card,bank_transfer,digital_wallet',
+            'payment_method' => 'required|in:credit_card,bank_transfer,digital_wallet',
             'terms' => 'accepted',
             'health' => 'accepted',
         ]);
