@@ -31,7 +31,7 @@
             <h2 class="text-2xl mb-10">THE BEST GYM IN TOWN</h2>
             <a
                 href="{{ route('member') }}"
-                class="cta-button inline-block bg-white text-black font-bold py-2 px-4 rounded hover:bg-green-400 transition"
+                class="cta-button inline-block bg-white shadow-lg shadow-emerald-600 text-black font-bold py-2 px-4 rounded hover:bg-emerald-600 hover:shadow-none hover:text-white hover:-translate-y-1 transition-all"
             >
                 Join Now
             </a>

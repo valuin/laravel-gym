@@ -26,19 +26,19 @@
   </section>
 
   <!-- Stats Section -->
-  <section class="grid grid-cols-3 gap-6 text-center mt-12 mx-10">
-    <div class="bg-[#262626] py-10 rounded-lg">
-      <h2 class="text-6xl font-bold">25</h2>
-      <p class="text-xl uppercase">Clubs</p>
-    </div>
-    <div class="bg-[#262626] py-10 rounded-lg">
-      <h2 class="text-6xl font-bold">5000</h2>
-      <p class="text-xl uppercase">Classes per month</p>
-    </div>
-    <div class="bg-[#262626] py-10 rounded-lg">
-      <h2 class="text-6xl font-bold">85</h2>
-      <p class="text-xl uppercase">Classes</p>
-    </div>
+    <section class="grid grid-cols-3 gap-6 text-center mt-12 mx-10">
+      <div class="group bg-white/10 backdrop-blur-sm rounded-lg p-6 border-2 border-white/15 shadow-md hover:border-emerald-500/30 transition-all py-10">
+        <h2 class="text-6xl font-bold transition-all group-hover:text-white group-hover:drop-shadow-[0_0_4px_#047857] duration-150 transition-all">25</h2>
+        <p class="text-xl uppercase">Clubs</p>
+      </div>
+      <div class="group bg-white/10 backdrop-blur-sm rounded-lg p-6 border-2 border-white/15 shadow-md hover:border-emerald-500/30 transition-all py-10">
+        <h2 class="text-6xl font-bold transition-all group-hover:text-white group-hover:drop-shadow-[0_0_4px_#047857] duration-150 transition-all">5000</h2>
+        <p class="text-xl uppercase">Classes per month</p>
+      </div>
+      <div class="group bg-white/10 backdrop-blur-sm rounded-lg p-6 border-2 border-white/15 shadow-md hover:border-emerald-500/30 transition-all py-10">
+        <h2 class="text-6xl font-bold transition-all group-hover:text-white group-hover:drop-shadow-[0_0_4px_#047857] duration-150 transition-all">85</h2>
+        <p class="text-xl uppercase">Classes</p>
+      </div>
   </section>
 
   <!--Price List Section-->
@@ -65,7 +65,7 @@
           <!-- Annual Plan -->
           <a href="{{ route('member') }}">
           <div
-            class="w-[325px] h-[500px] border-2 bg-gradient-to-b from-emerald-500 to-white text-black rounded-2xl flex flex-col items-center  text-center shadow-lg transform hover:-translate-y-1 transition duration-300 p-5 hover:shadow-emerald-500/30""
+            class="w-[325px] h-[500px] border-2 bg-gradient-to-b from-emerald-500 to-white text-black rounded-2xl flex flex-col items-center  text-center shadow-lg transform hover:-translate-y-1 transition duration-300 p-5 hover:border-emerald-500 hover:shadow-emerald-500/30""
           >
             <h3 class="text-xl mb-3">Annual</h3>
             <h1 class="text-4xl font-bold mb-5">2.8 Mio / Year</h1>

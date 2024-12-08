@@ -153,27 +153,27 @@
                             >
                                 <a
                                     href="{{ route('homepage') }}"
-                                    class="hover:text-green-400 transition"
+                                    class="hover:text-emerald-400 transition"
                                     >Home</a
                                 >
                                 <a
                                     href="{{ route('aboutus') }}"
-                                    class="hover:text-green-400 transition"
+                                    class="hover:text-emerald-400 transition"
                                     >About</a
                                 >
                                 <a
                                     href="{{ route('pricing') }}"
-                                    class="hover:text-green-400 transition"
+                                    class="hover:text-emerald-400 transition"
                                     >Pricing</a
                                 >
                                 <a
                                     href="{{ route('classes') }}"
-                                    class="hover:text-green-400 transition"
+                                    class="hover:text-emerald-400 transition"
                                     >Classes</a
                                 >
                                 <a
                                     href="{{ route('location') }}"
-                                    class="hover:text-green-400 transition"
+                                    class="hover:text-emerald-400 transition"
                                     >Location</a
                                 >
                             </nav>
