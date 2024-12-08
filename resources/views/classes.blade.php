@@ -75,7 +75,7 @@
     
                 @foreach ($classes as $class)
                 <!-- Frame yang bisa diklik -->
-                <a href="{{ $class['url'] }}" class="relative border rounded-lg shadow-lg w-full md:w-1/3 bg-cover bg-center text-white transition transform hover:scale-105 hover:shadow-[0_4px_20px_rgba(0,128,0,0.8)]" 
+                <a href="{{ $class['url'] }}" class="relative border border-white rounded-lg shadow-lg w-full md:w-1/3 bg-cover bg-center text-white transition-all duration-150 transform hover:border-emerald-500 hover:shadow-emerald-500/30" 
                      style="background-image: url('{{ $class['image'] }}');">
                     <!-- Overlay -->
                     <div class="absolute inset-0 bg-black bg-opacity-60 rounded-lg"></div>

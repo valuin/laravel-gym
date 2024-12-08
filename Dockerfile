@@ -2,6 +2,7 @@
 
 ARG PHP_VERSION=8.2
 ARG NODE_VERSION=18
+ARG APP_ENV=production
 FROM ubuntu:22.04 as base
 LABEL fly_launch_runtime="laravel"
 
