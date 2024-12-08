@@ -31,11 +31,11 @@ Route::get('/classes', function () {
     return view('classes');
 })->name('classes');
 
-Route::post('/register', [MemberController::class, 'store'])->name('register');
+// Route::post('/register', [MemberController::class, 'store'])->name('register');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/member', [MemberController::class, 'index'])->name('member');
     Route::post('/member', [MemberController::class, 'store'])->name('member.store');
+    Route::get('/member', [MemberController::class, 'index'])->name('member');
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
