@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +11,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="font-sans bg-gray-100">
-<div class="flex flex-col lg:flex-row justify-center items-center min-h-screen bg-black text-white">
+<div class="flex flex-col lg:flex-row justify-center items-center min-h-screen bg-transparent text-white">
     <!-- Left Section -->
     <div 
-        class="flex-1 flex flex-col justify-center items-start text-left p-8 bg-cover bg-center" 
+        class="flex-1 flex flex-col mr-4 justify-center items-start text-left p-8 bg-cover bg-center" 
         style="background-image: url('{{ asset('photo-fitness-man-woman-workout-gym_763111-22729.avif') }}')"
     >
         <div class="bg-black bg-opacity-60 p-6 rounded-lg">
             <h1 class="text-4xl font-extrabold leading-tight">Transform Your Body and Mind</h1>
             <p class="mt-6 text-lg leading-relaxed">
-                Join <span class="text-yellow-400">RamsFit</span> today and unlock a world of fitness tailored just for you. Whether you're into <span class="font-semibold">Yoga, Pilates</span>, or <span class="font-semibold">Body Combat</span>, we offer expertly guided classes to suit your goals. Build strength, improve flexibility, and recharge your mind in a dynamic, supportive community.
+                Join <span class="text-emerald-400">RamsFit</span> today and unlock a world of fitness tailored just for you. Whether you're into <span class="font-semibold">Yoga, Pilates</span>, or <span class="font-semibold">Body Combat</span>, we offer expertly guided classes to suit your goals. Build strength, improve flexibility, and recharge your mind in a dynamic, supportive community.
             </p>
-            <p class="mt-4 font-semibold text-yellow-400">Take the first step to a healthier, stronger you!</p>
+            <p class="mt-4 font-semibold text-emerald-400">Take the first step to a healthier, stronger you!</p>
         </div>
     </div>
 
     <!-- Right Section -->
-    <div class="flex-1 bg-gray-900 text-white p-8 rounded-lg shadow-lg">
+    <div class="flex-1 bg-stone-900 text-white p-8 rounded-lg shadow-lg">
         <h2 class="text-3xl font-bold mb-6 text-center">Join Our Community Today!</h2>
         
         <!-- Tampilkan pesan sukses -->
@@ -122,7 +126,7 @@
             </a>
 
             <!-- Button -->
-            <button type="submit" class="w-full p-3 bg-green-500 text-white rounded hover:bg-green-700">
+            <button type="submit" class="w-full p-3 bg-emerald-500 text-white rounded hover:bg-emerald-700">
                 Register Now
             </button>
         </form>
@@ -131,3 +135,5 @@
     </div>
 </body>
 </html>
+
+@endsection

@@ -102,7 +102,7 @@
                 >
                     <!-- Card 1: Yoga -->
                     <div
-                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all border border-white/20 w-full sm:w-1/2 md:w-1/3"
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border-2 border-white/15 shadow-md hover:border-emerald-500/30 hover:shadow-emerald-500/30 transition-all  w-full sm:w-1/2 md:w-1/3"
                     >
                         <h3 class="text-2xl font-semibold mb-4">Yoga</h3>
                         <p class="text-sm text-gray-300 mb-4">
@@ -118,7 +118,7 @@
 
                     <!-- Card 2: Body Combat -->
                     <div
-                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all border border-white/20 w-full sm:w-1/2 md:w-1/3"
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border-2 border-white/15 shadow-md   hover:border-emerald-500/30 hover:shadow-emerald-500/30 transition-all  w-full sm:w-1/2 md:w-1/3"
                     >
                         <h3 class="text-2xl font-semibold mb-4">Body Combat</h3>
                         <p class="text-sm text-gray-300 mb-4">
@@ -134,7 +134,7 @@
 
                     <!-- Card 3: Pilates -->
                     <div
-                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all border border-white/20 w-full sm:w-1/2 md:w-1/3"
+                        class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border-2 border-white/15 shadow-md hover:border-emerald-500/30 hover:shadow-emerald-500/30 transition-all  w-full sm:w-1/2 md:w-1/3"
                     >
                         <h3 class="text-2xl font-semibold mb-4">Pilates</h3>
                         <p class="text-sm text-gray-300 mb-4">
