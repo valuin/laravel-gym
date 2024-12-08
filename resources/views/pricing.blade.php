@@ -52,7 +52,7 @@
           <!--Daily Plan -->
           <a href="{{ route('member') }}">
           <div
-            class="w-[275px] h-[450px] bg-white text-black rounded-2xl flex flex-col items-center text-center shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 p-5 hover:scale-105 hover:shadow-[0_4px_20px_rgba(255,255,255,0.8)]">
+            class="w-[275px] h-[450px] bg-white text-black rounded-2xl flex flex-col border-2 border-white items-center text-center shadow-lg transform hover:shadow-emerald-500/60 hover:border-emerald-500/70 hover:-translate-y-1 transition duration-300 p-5">
             <h3 class="text-xl mb-3">Daily</h3>
             <h1 class="text-4xl font-bold mb-5">35k / Day</h1>
             <p class="text-base mb-4">Full-day access to all gym facilities</p>
@@ -65,7 +65,7 @@
           <!-- Annual Plan -->
           <a href="{{ route('member') }}">
           <div
-            class="w-[325px] h-[500px] bg-gradient-to-b from-green-500 to-white text-black rounded-2xl flex flex-col items-center text-center shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 p-5 hover:scale-105 hover:shadow-[0_4px_20px_rgba(0,128,0,0.8)]""
+            class="w-[325px] h-[500px] border-2 bg-gradient-to-b from-emerald-500 to-white text-black rounded-2xl flex flex-col items-center  text-center shadow-lg transform hover:-translate-y-1 transition duration-300 p-5 hover:shadow-emerald-500/30""
           >
             <h3 class="text-xl mb-3">Annual</h3>
             <h1 class="text-4xl font-bold mb-5">2.8 Mio / Year</h1>
@@ -87,7 +87,7 @@
           <!--Monthly Plan -->
           <a href="{{ route('member') }}">
           <div
-            class="w-[275px] h-[450px] bg-white text-black rounded-2xl flex flex-col items-center text-center shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 p-5 hover:scale-105 hover:shadow-[0_4px_20px_rgba(255,255,255,0.8)]">
+            class="w-[275px] h-[450px] bg-white text-black rounded-2xl flex flex-col border-2 border-white items-center text-center shadow-lg transform hover:shadow-emerald-500/60 hover:border-emerald-500/70 hover:-translate-y-1 transition duration-300 p-3">
             <h3 class="text-xl mb-3">Monthly</h3>
             <h1 class="text-4xl font-bold mb-5">300k / Month</h1>
             <p class="text-base mb-4">
