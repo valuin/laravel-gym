@@ -13,6 +13,8 @@ class ClassController extends Controller
     {
         \Log::info('Data diterima:', $request->all());
 
+        
+
         $validated = $request->validate([
             'city' => 'required|string|max:255',
             'class' => 'required|string|max:255',

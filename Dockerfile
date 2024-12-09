@@ -88,7 +88,9 @@ COPY --from=base /var/www/html/vendor /app/vendor
 # Note: We run "production" for Mix and "build" for Vite
 RUN if [ -f "vite.config.js" ]; then \
         ASSET_CMD="build"; \
-        php artisan migrate \
+        npm install \
+        php artisan config:cache \
+        npm run build; \
     else \
         ASSET_CMD="production"; \
     fi; \
