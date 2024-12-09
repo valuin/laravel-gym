@@ -51,21 +51,21 @@
                     $classes = [
                         [
                             'name' => 'Yoga',
-                            'price' => '$19',
+                            'price' => 'IDR 125k',
                             'features' => ['Access to gym facilities', 'Free Wi-Fi', 'Locker room access'],
                             'image' => 'https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2021/06/29044522/Yoga.jpg', // URL Background Image
                             'url' => route('yoga') // Link tujuan
                         ],
                         [
                             'name' => 'Body Combat',
-                            'price' => '$29',
+                            'price' => 'IDR 100k',
                             'features' => ['Group Classes', 'Cardio Equipment', 'Guided Sessions'],
                             'image' => 'https://prod-everyoneactive-wp.s3.eu-west-2.amazonaws.com/wp-content/uploads/2019/02/14135347/FW17-BODYCOMBAT-BRAND-IMAGE-cropped-1024x576.jpg', // URL Background Image
                             'url' => route('yoga') // Link tujuan
                         ],
                         [
                             'name' => 'Pilates',
-                            'price' => '$25',
+                            'price' => 'IDR 150k',
                             'features' => ['Flexibility Training', 'Mindfulness Sessions', 'Premium Mats'],
                             'image' => 'https://cdn.prod.website-files.com/6474525654e763b2569e6b78/6541bc6dc2cdfb8dc7f64b89_64a4feaaba4b95d0185337ef_foundation-banner-image2.webp', // URL Background Image
                             'url' => route('yoga') // Link tujuan
