@@ -14,6 +14,7 @@ class ClassModel extends Model
     protected $fillable = [
         'city',
         'class',
+        'date',
         'session',
         'name',
         'wa_number',

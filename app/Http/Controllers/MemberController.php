@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Member;
 use Illuminate\Http\Request;
+use App\Models\ClassModel; 
 
 class MemberController extends Controller
 {
@@ -30,6 +31,24 @@ class MemberController extends Controller
         Member::create($validatedData);
     
         return redirect()->back()->with('success', 'Registration successful!');    
+    }
+
+    /**
+     * Remove the specified class from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id)
+    {
+        $class = ClassModel::findOrFail($id);
+
+        // Optionally, authorize the deletion
+        // $this->authorize('delete', $class);
+
+        $class->delete();
+
+        return redirect()->back()->with('success', 'Class deleted successfully.');
     }
 }
 

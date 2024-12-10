@@ -18,6 +18,7 @@ class ClassController extends Controller
         $validated = $request->validate([
             'city' => 'required|string|max:255',
             'class' => 'required|string|max:255',
+            'date' => 'required|date',
             'session' => 'required|string|max:255',
             'name' => 'required|string|max:255',
             'wa_number' => 'required|string|max:255',

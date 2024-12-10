@@ -35,6 +35,7 @@ Route::get('/classes', function () {
 Route::post('/yesking', [ClassController::class, 'register'])->name('yesking');
 
 Route::post('/register', [MemberController::class, 'store'])->name('register');
+Route::delete('/classes/{id}', [MemberController::class, 'destroy'])->name('classes.destroy');
 
 Route::middleware('auth')->group(function () {
     Route::get('/member', [MemberController::class, 'index'])->name('member');

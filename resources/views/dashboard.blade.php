@@ -71,10 +71,17 @@
         @else
             <ul class="mt-4">
                 @foreach($classes as $class)
-                    <li class="mb-2">
-                        <strong>{{ $class->class }}</strong> - {{ $class->session }}
+                <li class="mb-2 flex justify-between items-center">
+                    <div>
+                        <strong>{{ $class->class }} - <strong>{{ $class->date }}</strong></strong> - {{ $class->session }}
                         ({{ $class->city }})
-                    </li>
+                    </div>
+                    <form action="{{ route('classes.destroy', $class->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this class?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-red-500 hover:text-red-700">Delete</button>
+                    </form>
+                </li>
                 @endforeach
             </ul>
         @endif

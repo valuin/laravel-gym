@@ -91,7 +91,7 @@
             color: white;
         }
 
-        select, input[type="text"], input[type="email"] {
+        select, input[type="text"], input[type="email"], input[type="date"] {
             width: 100%;
             padding: 12px;
             margin-bottom: 15px;
@@ -202,6 +202,7 @@
         }
 
     </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div class="container">
@@ -219,22 +220,27 @@
                     @csrf
 
                     <label for="city">City *</label>
-                    <select name="city" id="city" required>
+                    <select name="city" id="city" class="py-2" required>
                         <option value="">Select City</option>
                         <option value="Pondok Labu">Pondok Labu</option>
                         <option value="Kemayoran">Kemayoran</option>
                     </select>
 
                     <label for="class">Class *</label>
-                    <select name="class" id="class" required>
+                    <select name="class" id="class" class="py-2" required>
                         <option value="">Select Class</option>
                         <option value="Yoga">Yoga</option>
                         <option value="Pilates">Pilates</option>
                         <option value="Body Combat">Body Combat</option>
                     </select>
 
-                    <label for="session">Training Session *</label>
-                    <select name="session" id="session" required>
+                    <div class="form-group">
+                        <label for="dob" class="block text-sm mb-2">Date*</label>
+                        <input type="date" id="date" name="date" required class="w-full py-2 rounded ">
+                    </div>
+
+                    <label for="class">Session *</label>
+                    <select name="session" id="session" class="py-2" required>
                         <option value="">Select Hour</option>
                         <option value="Morning (08.00 - 09.00)">Morning (08.00 - 09.00)</option>
                         <option value="Evening (16.00 - 17.00)">Evening (16.00 - 17.00)</option>
@@ -242,10 +248,10 @@
                     </select>
 
                     <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="text" id="name" name="name" class="py-2" placeholder="Your Name" required>
 
                     <label for="wa_number">WhatsApp Number *</label>
-                    <input type="text" id="wa_number" name="wa_number" placeholder="Your WhatsApp Number" required>
+                    <input type="text" id="wa_number" name="wa_number" class="py-2" placeholder="Your WhatsApp Number" required>
 
                     <div class="checkbox-group">
                         <label>
@@ -253,7 +259,7 @@
                             I’ve read and agreed to the  <a href="#" id="termsLink" style="color: #4CAF50;">terms and conditions</a>
                         </label>
                        
-                    <button type="submit">Register Now</button>
+                    <button type="submit" class="bg-emerald-500 py-2 text-stone-800">Register Now</button>
                 </form>
 
                 @if ($errors->any())
