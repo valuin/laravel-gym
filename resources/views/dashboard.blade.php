@@ -79,7 +79,7 @@
                     <form action="{{ route('classes.destroy', $class->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this class?');">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="text-red-500 hover:text-red-700">Delete</button>
+                        <button type="submit" class="text-red-500 hover:text-red-700">Cancel</button>
                     </form>
                 </li>
                 @endforeach
